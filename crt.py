@@ -25,8 +25,9 @@ class CertificateTransparancy:
         return response.json()
 
 
+domain = input("Domain: ")
 c = CertificateTransparancy()
-results = c.search("paypal.com")
+results = c.search(domain)
 for identity in results:
     for i in identity.get("name_value", "").splitlines():
         # ready to send these to httpx
